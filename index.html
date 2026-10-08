@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pemerintah Kota Palu - Portal Resmi Pelayanan & Informasi Publik</title>
+  <meta name="description" content="Portal Resmi Pemerintah Kota Palu. Bersama mewujudkan Palu yang lebih maju, sejahtera, dan berkelanjutan melalui pelayanan publik berkualitas dan transparan.">
+  <link rel="icon" type="image/png" href="assets/images/logo-palu.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            palublue: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#1d70d8',
+              700: '#1756a9',
+              800: '#1e40af',
+              900: '#1e3a8a',
+              950: '#0f2452'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased selection:bg-blue-500 selection:text-white">
+
+  <!-- TOP EMERGENCY NOTIFICATION TICKER -->
+  <div class="bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white text-xs font-semibold py-1.5 px-4 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2 overflow-hidden">
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/20 text-[11px] font-bold tracking-wider uppercase">
+          <span class="w-2 h-2 rounded-full bg-white animate-ping"></span> Siaga 112
+        </span>
+        <span class="truncate">Layanan Darurat Bebas Pulsa 24 Jam Kota Palu: Hubungi Call Center 112 untuk Penyelamatan, Medis, & Bencana</span>
+      </div>
+      <div class="hidden md:flex items-center gap-4 text-[11px]">
+        <span class="flex items-center gap-1"><i class="fas fa-cloud-sun"></i> Palu: 31°C (Cerah Berawan)</span>
+        <span class="text-white/40">|</span>
+        <button id="dark-mode-toggle" class="hover:text-amber-200 transition-colors flex items-center gap-1" title="Mode Tampilan">
+          <i class="fas fa-moon"></i> <span>Mode Gelap</span>
+        </button>
+        <span class="text-white/40">|</span>
+        <div class="flex items-center gap-1.5">
+          <span>Aksara:</span>
+          <button id="font-decrease" class="w-4 h-4 rounded bg-white/20 hover:bg-white/30 flex items-center justify-center font-bold text-[10px]">A-</button>
+          <button id="font-increase" class="w-4 h-4 rounded bg-white/20 hover:bg-white/30 flex items-center justify-center font-bold text-[10px]">A+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION WITH INTEGRATED FLOATING NAVBAR -->
+  <section id="hero-banner" class="hero-wrapper" style="background-image: url('assets/images/hero-bg.jpg');">
+    <div class="hero-gradient-overlay absolute inset-0"></div>
+
+    <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-20">
+      
+      <!-- FLOATING GLASS NAVBAR (Matches reference design) -->
+      <nav id="main-nav" class="glass-nav-container py-3 px-4 md:px-6 mb-12 flex items-center justify-between transition-all duration-300">
+        <!-- Logo & City Title -->
+        <a href="#" class="flex items-center gap-3 group">
+          <img src="assets/images/logo-palu.png" alt="Lambang Kota Palu" class="h-10 w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-sm">
+          <div class="leading-tight">
+            <span class="text-[10px] md:text-[11px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 block">Pemerintah</span>
+            <span class="text-sm md:text-base font-extrabold text-blue-900 dark:text-blue-400 block tracking-tight">Kota Palu</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden lg:flex items-center gap-1 text-sm font-semibold text-slate-700 dark:text-slate-200">
+          <a href="#hero-banner" class="px-4 py-1.5 rounded-full nav-pill-active transition-all">Beranda</a>
+
+          <!-- Dropdown Profil -->
+          <div class="relative group">
+            <button class="px-3.5 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all flex items-center gap-1 text-slate-700 dark:text-slate-200">
+              Profil <i class="fas fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition-transform"></i>
+            </button>
+            <div class="absolute left-0 top-full mt-2 w-56 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-200 dark:border-slate-800 shadow-xl opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 p-2 z-50">
+              <a href="#visi-misi" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600">Visi & Misi</a>
+              <a href="#arti-lambang" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600">Arti Lambang & Sejarah</a>
+              <a href="#geografis" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600">Letak Geografis & Iklim</a>
+              <a href="#pimpinan-daerah" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600">Wali Kota & Wakil Wali Kota</a>
+              <a href="#kecamatan-wilayah" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600">8 Kecamatan & 46 Kelurahan</a>
+            </div>
+          </div>
+
+          <!-- Dropdown Layanan -->
+          <div class="relative group">
+            <button class="px-3.5 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all flex items-center gap-1 text-slate-700 dark:text-slate-200">
+              Layanan <i class="fas fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition-transform"></i>
+            </button>
+            <div class="absolute left-0 top-full mt-2 w-64 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-200 dark:border-slate-800 shadow-xl opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 p-2 z-50">
+              <a href="https://dukcapil.palukota.go.id/one/" target="_blank" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600">Dukcapil ONE (KTP & KK)</a>
+              <a href="https://esiga.palukota.go.id" target="_blank" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600">e-SIGA (Perizinan Terpadu)</a>
+              <a href="https://palukota.go.id/layanan-ppid/" target="_blank" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600">PPID Informasi Publik</a>
+              <a href="https://jdih.palukota.go.id" target="_blank" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600">JDIH (Produk Hukum Daerah)</a>
+              <a href="https://www.lpsekotapalu.com/" target="_blank" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600">LPSE Pengadaan Barang/Jasa</a>
+              <a href="http://laporwalikota.palukota.go.id" target="_blank" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600">Lapor Walikota & Pengaduan</a>
+            </div>
+          </div>
+
+          <!-- Dropdown Informasi -->
+          <div class="relative group">
+            <button class="px-3.5 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all flex items-center gap-1 text-slate-700 dark:text-slate-200">
+              Informasi <i class="fas fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition-transform"></i>
+            </button>
+            <div class="absolute left-0 top-full mt-2 w-60 rounded-2xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border border-slate-200 dark:border-slate-800 shadow-xl opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 p-2 z-50">
+              <a href="#pengumuman-section" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600">Pengumuman & Edaran</a>
+              <a href="#berita" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600">Siaran Pers & Berita</a>
+              <a href="#transparansi" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600">Transparansi Anggaran (APBD)</a>
+              <a href="#palu-angka-section" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600">Palu dalam Angka (Statistik)</a>
+              <a href="#galeri-wisata" class="block px-3 py-2 rounded-xl text-xs font-medium hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600">Destinasi & Pariwisata Palu</a>
+            </div>
+          </div>
+
+          <a href="#berita" class="px-3.5 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Berita</a>
+        </div>
+
+        <!-- Right Action Button & Search Trigger -->
+        <div class="flex items-center gap-2">
+          <!-- Spotlight Search Trigger -->
+          <button class="search-trigger px-3 py-1.5 rounded-full bg-slate-100/80 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-medium flex items-center gap-2 transition-all" title="Cari Cepat (Ctrl+K)">
+            <i class="fas fa-search text-slate-400"></i>
+            <span class="hidden sm:inline">Cari...</span>
+            <kbd class="hidden sm:inline-block bg-white dark:bg-slate-900 px-1.5 py-0.5 rounded text-[10px] border border-slate-200 dark:border-slate-700 font-mono text-slate-400">⌘K</kbd>
+          </button>
+
+          <!-- Main CTA Pill Button (Matches reference image) -->
+          <a href="#layanan-utama" class="px-4 py-2 rounded-full bg-palublue-600 hover:bg-palublue-700 active:scale-95 text-white text-xs md:text-sm font-bold flex items-center gap-2 shadow-md hover:shadow-palublue-600/30 transition-all">
+            <i class="fas fa-user-circle"></i>
+            <span>Layanan Publik</span>
+          </a>
+
+          <!-- Mobile Hamburger -->
+          <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-full text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
+            <i class="fas fa-bars text-lg"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden glass-card p-4 mb-8 space-y-2">
+        <a href="#hero-banner" class="block px-3 py-2 rounded-xl text-sm font-semibold bg-blue-50 text-blue-600">Beranda</a>
+        <a href="#visi-misi" class="block px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200">Profil Kota Palu</a>
+        <a href="#layanan-utama" class="block px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200">Layanan Publik</a>
+        <a href="#pengumuman-section" class="block px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200">Pengumuman & Edaran</a>
+        <a href="#berita" class="block px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200">Berita Terkini</a>
+        <a href="#agenda-section" class="block px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-200">Agenda Kegiatan</a>
+      </div>
+
+      <!-- HERO HEADLINE CONTENT (Matches reference typography and positioning) -->
+      <div class="pt-6 pb-16 md:pt-10 md:pb-24 max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-semibold mb-4 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Palu Mantap Bergerak • Mandiri, Tangguh, Berkelanjutan</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight drop-shadow-md">
+          Selamat Datang di<br>
+          <span class="text-white">Pemerintah Kota Palu</span>
+        </h1>
+
+        <p class="mt-4 text-base sm:text-lg text-white/95 max-w-2xl leading-relaxed drop-shadow font-medium">
+          Bersama mewujudkan Palu yang lebih maju, sejahtera, dan berkelanjutan melalui pelayanan publik yang berkualitas dan transparan.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <!-- Jelajahi Layanan Publik CTA Pill -->
+          <a href="#layanan-utama" class="px-6 py-3.5 rounded-full bg-palublue-600 hover:bg-palublue-700 active:scale-95 text-white font-bold text-sm sm:text-base flex items-center gap-3 shadow-xl hover:shadow-palublue-600/40 transition-all group">
+            <span>Jelajahi Layanan Publik</span>
+            <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+          </a>
+
+          <!-- Quick Emergency Button -->
+          <a href="tel:112" class="px-5 py-3.5 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/40 text-white font-bold text-sm sm:text-base flex items-center gap-2.5 transition-all">
+            <i class="fas fa-phone-volume text-red-400 animate-bounce"></i>
+            <span>Palu Siaga 112</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Location Badge & Slider Indicators (Bottom right of hero) -->
+      <div class="flex items-center justify-between text-white pt-4">
+        <div></div>
+        <div class="flex items-center gap-4 bg-black/25 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+          <div class="flex items-center gap-1.5 text-xs font-semibold text-white/90">
+            <i class="fas fa-map-marker-alt text-red-400"></i>
+            <span id="hero-location-text">Teluk Palu, Sulawesi Tengah</span>
+          </div>
+          <span class="text-white/30">|</span>
+          <!-- Slider Dots -->
+          <div class="flex items-center gap-1.5">
+            <button class="slider-dot w-8 h-2 rounded-full bg-white transition-all cursor-pointer" title="Teluk Palu"></button>
+            <button class="slider-dot w-2.5 h-2 rounded-full bg-white/50 hover:bg-white transition-all cursor-pointer" title="Balai Kota"></button>
+            <button class="slider-dot w-2.5 h-2 rounded-full bg-white/50 hover:bg-white transition-all cursor-pointer" title="Jembatan Palu"></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MAIN DASHBOARD CONTENT SECTION -->
+  <main class="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 md:-mt-20 space-y-12 pb-24">
+
+    <!-- ROW 1: THE THREE MAIN GLASSMORPHIC CARDS (Matches reference image) -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+      <!-- CARD 1: LAYANAN PUBLIK -->
+      <div id="layanan-utama" class="glass-card p-6 flex flex-col justify-between">
+        <div>
+          <!-- Header Card 1 -->
+          <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-500/25">
+                <i class="fas fa-users text-xl"></i>
+              </div>
+              <div>
+                <h2 class="text-lg font-bold text-slate-900 dark:text-white">Layanan Publik</h2>
+                <p class="text-xs text-slate-500 dark:text-slate-400 leading-snug">Akses berbagai layanan administrasi dan pelayanan masyarakat secara online.</p>
+              </div>
+            </div>
+            <a href="#semua-layanan" class="w-8 h-8 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-400 hover:text-blue-600 hover:border-blue-600 transition-colors" title="Lihat Semua Layanan">
+              <i class="fas fa-chevron-right text-xs"></i>
+            </a>
+          </div>
+
+          <!-- 4 Action Tiles Grid (Matches reference image) -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-5">
+            <!-- Action Tile 1 -->
+            <button data-service-type="kependudukan" class="action-tile p-3 text-center flex flex-col items-center justify-center gap-2 group cursor-pointer">
+              <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i class="fas fa-user-circle text-lg"></i>
+              </div>
+              <span class="text-[11px] font-bold text-slate-700 dark:text-slate-200 leading-tight">Administrasi Kependudukan</span>
+            </button>
+
+            <!-- Action Tile 2 -->
+            <button data-service-type="perizinan" class="action-tile p-3 text-center flex flex-col items-center justify-center gap-2 group cursor-pointer">
+              <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i class="fas fa-file-signature text-lg"></i>
+              </div>
+              <span class="text-[11px] font-bold text-slate-700 dark:text-slate-200 leading-tight">Perizinan Berusaha</span>
+            </button>
+
+            <!-- Action Tile 3 -->
+            <button data-service-type="pajak" class="action-tile p-3 text-center flex flex-col items-center justify-center gap-2 group cursor-pointer">
+              <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i class="fas fa-file-invoice-dollar text-lg"></i>
+              </div>
+              <span class="text-[11px] font-bold text-slate-700 dark:text-slate-200 leading-tight">Pajak Daerah (e-PBB)</span>
+            </button>
+
+            <!-- Action Tile 4 -->
+            <button data-service-type="pengaduan" class="action-tile p-3 text-center flex flex-col items-center justify-center gap-2 group cursor-pointer">
+              <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <i class="fas fa-comment-dots text-lg"></i>
+              </div>
+              <span class="text-[11px] font-bold text-slate-700 dark:text-slate-200 leading-tight">Pengaduan Masyarakat</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs">
+          <span class="text-slate-400">Terintegrasi SPBE Nasional</span>
+          <a href="#semua-layanan" class="font-bold text-blue-600 dark:text-blue-400 hover:underline">Semua Layanan (8) →</a>
+        </div>
+      </div>
+
+      <!-- CARD 2: PENGUMUMAN & EDARAN -->
+      <div id="pengumuman-section" class="glass-card p-6 flex flex-col justify-between">
+        <div>
+          <!-- Header Card 2 -->
+          <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-teal-600 flex items-center justify-center text-white shadow-md shadow-teal-500/25">
+                <i class="fas fa-bullhorn text-xl"></i>
+              </div>
+              <div>
+                <h2 class="text-lg font-bold text-slate-900 dark:text-white">Pengumuman & Edaran</h2>
+                <p class="text-xs text-slate-500 dark:text-slate-400 leading-snug">Informasi terbaru seputar pengumuman, edaran dan kebijakan dari Pemerintah Kota Palu.</p>
+              </div>
+            </div>
+            <button onclick="document.getElementById('pengumuman-item-1').click();" class="w-8 h-8 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-400 hover:text-teal-600 hover:border-teal-600 transition-colors" title="Lihat Pengumuman">
+              <i class="fas fa-chevron-right text-xs"></i>
+            </button>
+          </div>
+
+          <!-- Announcement Items List (Matches reference image) -->
+          <div class="space-y-2.5 mt-4">
+            <!-- Item 1 -->
+            <div id="pengumuman-item-1" class="announcement-item p-2.5 rounded-xl hover:bg-white dark:hover:bg-slate-800/60 border border-transparent hover:border-slate-200 dark:hover:border-slate-700 transition-all flex items-center justify-between group cursor-pointer"
+                 data-title="Pengumuman Hasil Seleksi PPPK Tahap II di Lingkungan Pemkot Palu"
+                 data-date="01 Okt 2025"
+                 data-desc="Berdasarkan hasil seleksi kompetensi pengadaan Pegawai Pemerintah dengan Perjanjian Kerja (PPPK) Formasi Tahun Anggaran 2025, Badan Kepegawaian dan Pengembangan Sumber Daya Manusia Daerah (BKPSDMD) Kota Palu resmi mengumumkan kelulusan peserta tahap II."
+                 data-file="Pengumuman_Kelulusan_PPPK_Palu_Tahap_II.pdf">
+              <div class="flex items-center gap-3 pr-2">
+                <span class="text-[11px] font-semibold text-slate-400 whitespace-nowrap min-w-[70px]">01 Okt 2025</span>
+                <h3 class="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-teal-600 transition-colors line-clamp-1">Pengumuman Hasil Seleksi PPPK Tahap II di Lingkungan Pemkot Palu</h3>
+              </div>
+              <i class="fas fa-chevron-right text-[10px] text-slate-300 group-hover:text-teal-600 group-hover:translate-x-0.5 transition-all"></i>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="announcement-item p-2.5 rounded-xl hover:bg-white dark:hover:bg-slate-800/60 border border-transparent hover:border-slate-200 dark:hover:border-slate-700 transition-all flex items-center justify-between group cursor-pointer"
+                 data-title="Edaran Peningkatan Kewaspadaan Terhadap Cuaca Ekstrem"
+                 data-date="30 Sep 2025"
+                 data-desc="Surat Edaran Wali Kota Palu mengenai langkah antisipatif peningkatan curah hujan, potensi angin kencang, dan gelombang pasang di pesisir Teluk Palu. Masyarakat dan nelayan diimbau waspada dan aktif memantau informasi BMKG."
+                 data-file="SE_Kewaspadaan_Cuaca_Ekstrem_Palu.pdf">
+              <div class="flex items-center gap-3 pr-2">
+                <span class="text-[11px] font-semibold text-slate-400 whitespace-nowrap min-w-[70px]">30 Sep 2025</span>
+                <h3 class="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-teal-600 transition-colors line-clamp-1">Edaran Peningkatan Kewaspadaan Terhadap Cuaca Ekstrem</h3>
+              </div>
+              <i class="fas fa-chevron-right text-[10px] text-slate-300 group-hover:text-teal-600 group-hover:translate-x-0.5 transition-all"></i>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="announcement-item p-2.5 rounded-xl hover:bg-white dark:hover:bg-slate-800/60 border border-transparent hover:border-slate-200 dark:hover:border-slate-700 transition-all flex items-center justify-between group cursor-pointer"
+                 data-title="Jadwal Pelayanan Administrasi Kependudukan Oktober 2025"
+                 data-date="28 Sep 2025"
+                 data-desc="Dinas Kependudukan dan Pencatatan Sipil Kota Palu merilis jadwal layanan jemput bola (pelayanan keliling) perekaman KTP-el pemula di sekolah-sekolah serta pembuatan akta pencatatan sipil di kantor kelurahan."
+                 data-file="Jadwal_Dukcapil_Keliling_Oktober_2025.pdf">
+              <div class="flex items-center gap-3 pr-2">
+                <span class="text-[11px] font-semibold text-slate-400 whitespace-nowrap min-w-[70px]">28 Sep 2025</span>
+                <h3 class="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-teal-600 transition-colors line-clamp-1">Jadwal Pelayanan Administrasi Kependudukan Oktober 2025</h3>
+              </div>
+              <i class="fas fa-chevron-right text-[10px] text-slate-300 group-hover:text-teal-600 group-hover:translate-x-0.5 transition-all"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs">
+          <span class="text-slate-400">Total 12 Edaran Aktif</span>
+          <button onclick="document.getElementById('pengumuman-item-1').click();" class="font-bold text-teal-600 dark:text-teal-400 hover:underline">Arsip Pengumuman →</button>
+        </div>
+      </div>
+
+      <!-- CARD 3: PALU DALAM ANGKA -->
+      <div id="palu-angka-section" class="glass-card p-6 flex flex-col justify-between">
+        <div>
+          <!-- Header Card 3 -->
+          <div class="flex items-start justify-between mb-4">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-indigo-600 flex items-center justify-center text-white shadow-md shadow-indigo-500/25">
+                <i class="fas fa-chart-bar text-xl"></i>
+              </div>
+              <div>
+                <h2 class="text-lg font-bold text-slate-900 dark:text-white">Palu dalam Angka</h2>
+                <p class="text-xs text-slate-500 dark:text-slate-400 leading-snug">Data dan statistik terkini Kota Palu dalam berbagai sektor.</p>
+              </div>
+            </div>
+            <a href="#transparansi" class="w-8 h-8 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-400 hover:text-indigo-600 hover:border-indigo-600 transition-colors" title="Lihat Satu Data Palu">
+              <i class="fas fa-chevron-right text-xs"></i>
+            </a>
+          </div>
+
+          <!-- 6 Stat Metric Boxes Grid (Matches reference image) -->
+          <div class="grid grid-cols-3 gap-2.5 mt-5">
+            <!-- Stat 1: Kecamatan -->
+            <div class="metric-box p-2.5 text-left">
+              <div class="flex items-center gap-1.5 text-slate-400 text-xs mb-1">
+                <i class="fas fa-map-marker-alt text-indigo-500"></i>
+                <span class="text-[10px] font-medium">Kecamatan</span>
+              </div>
+              <div class="text-lg font-black text-slate-900 dark:text-white" data-counter data-target="8">8</div>
+            </div>
+
+            <!-- Stat 2: Kelurahan -->
+            <div class="metric-box p-2.5 text-left">
+              <div class="flex items-center gap-1.5 text-slate-400 text-xs mb-1">
+                <i class="fas fa-home text-indigo-500"></i>
+                <span class="text-[10px] font-medium">Kelurahan</span>
+              </div>
+              <div class="text-lg font-black text-slate-900 dark:text-white" data-counter data-target="46">46</div>
+            </div>
+
+            <!-- Stat 3: Penduduk -->
+            <div class="metric-box p-2.5 text-left">
+              <div class="flex items-center gap-1.5 text-slate-400 text-xs mb-1">
+                <i class="fas fa-users text-indigo-500"></i>
+                <span class="text-[10px] font-medium">Penduduk</span>
+              </div>
+              <div class="text-sm font-black text-slate-900 dark:text-white truncate" data-counter data-prefix="± " data-target="411000">± 411.000</div>
+            </div>
+
+            <!-- Stat 4: Luas Wilayah -->
+            <div class="metric-box p-2.5 text-left">
+              <div class="flex items-center gap-1.5 text-slate-400 text-xs mb-1">
+                <i class="fas fa-map text-indigo-500"></i>
+                <span class="text-[10px] font-medium">Luas Wilayah</span>
+              </div>
+              <div class="text-xs font-black text-slate-900 dark:text-white truncate" data-counter data-target="395.06" data-decimals="2" data-suffix=" km²">395,06 km²</div>
+            </div>
+
+            <!-- Stat 5: IPM -->
+            <div class="metric-box p-2.5 text-left">
+              <div class="flex items-center gap-1.5 text-slate-400 text-xs mb-1">
+                <i class="fas fa-chart-line text-indigo-500"></i>
+                <span class="text-[10px] font-medium">IPM</span>
+              </div>
+              <div class="text-lg font-black text-slate-900 dark:text-white" data-counter data-target="82.45" data-decimals="2">82,45</div>
+            </div>
+
+            <!-- Stat 6: Tingkat Kemiskinan -->
+            <div class="metric-box p-2.5 text-left">
+              <div class="flex items-center gap-1.5 text-slate-400 text-xs mb-1">
+                <i class="fas fa-percentage text-indigo-500"></i>
+                <span class="text-[10px] font-medium">Kemiskinan</span>
+              </div>
+              <div class="text-lg font-black text-slate-900 dark:text-white" data-counter data-target="6.32" data-decimals="2" data-suffix="%">6,32%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs">
+          <span class="text-slate-400">Sumber: BPS Kota Palu</span>
+          <a href="#kecamatan-wilayah" class="font-bold text-indigo-600 dark:text-indigo-400 hover:underline">Detail 8 Kecamatan →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ROW 2: PROGRAM UNGGULAN & AGENDA KOTA PALU (Matches reference image) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+      <!-- LEFT: PROGRAM UNGGULAN KOTA PALU (Approx 60-65% width = 7/12 cols) -->
+      <div id="program-unggulan" class="lg:col-span-7 glass-card p-6">
+        <!-- Section Header -->
+        <div class="flex items-center justify-between mb-5">
+          <div>
+            <h2 class="text-lg font-bold text-slate-900 dark:text-white">Program Unggulan Kota Palu</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Fokus pembangunan untuk kesejahteraan masyarakat.</p>
+          </div>
+          <button onclick="document.querySelector('[data-program=ekonomi]').click();" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1">
+            Lihat Semua Program <i class="fas fa-chevron-right text-[10px]"></i>
+          </button>
+        </div>
+
+        <!-- 6 Program Pill Cards (2 cols on tablet, 3 on larger) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+          <!-- 1. Ekonomi & Investasi -->
+          <div data-program="ekonomi" class="program-pill flex items-center justify-between cursor-pointer group">
+            <div class="flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm group-hover:scale-110 transition-transform">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <span class="text-xs font-bold text-slate-800 dark:text-slate-200">Ekonomi & Investasi</span>
+            </div>
+            <i class="fas fa-chevron-right text-[10px] text-slate-300 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all"></i>
+          </div>
+
+          <!-- 2. Sosial Kependudukan -->
+          <div data-program="sosial" class="program-pill flex items-center justify-between cursor-pointer group">
+            <div class="flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-xl bg-green-100 dark:bg-green-950/80 text-green-600 dark:text-green-400 flex items-center justify-center text-sm group-hover:scale-110 transition-transform">
+                <i class="fas fa-users"></i>
+              </div>
+              <span class="text-xs font-bold text-slate-800 dark:text-slate-200">Sosial Kependudukan</span>
+            </div>
+            <i class="fas fa-chevron-right text-[10px] text-slate-300 group-hover:text-green-600 group-hover:translate-x-0.5 transition-all"></i>
+          </div>
+
+          <!-- 3. Infrastruktur & Tata Ruang -->
+          <div data-program="infrastruktur" class="program-pill flex items-center justify-between cursor-pointer group">
+            <div class="flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-xl bg-orange-100 dark:bg-orange-950/80 text-orange-600 dark:text-orange-400 flex items-center justify-center text-sm group-hover:scale-110 transition-transform">
+                <i class="fas fa-city"></i>
+              </div>
+              <span class="text-xs font-bold text-slate-800 dark:text-slate-200">Infrastruktur & Tata Ruang</span>
+            </div>
+            <i class="fas fa-chevron-right text-[10px] text-slate-300 group-hover:text-orange-600 group-hover:translate-x-0.5 transition-all"></i>
+          </div>
+
+          <!-- 4. Birokrasi & Keuangan -->
+          <div data-program="birokrasi" class="program-pill flex items-center justify-between cursor-pointer group">
+            <div class="flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-xl bg-purple-100 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400 flex items-center justify-center text-sm group-hover:scale-110 transition-transform">
+                <i class="fas fa-landmark"></i>
+              </div>
+              <span class="text-xs font-bold text-slate-800 dark:text-slate-200">Birokrasi & Keuangan</span>
+            </div>
+            <i class="fas fa-chevron-right text-[10px] text-slate-300 group-hover:text-purple-600 group-hover:translate-x-0.5 transition-all"></i>
+          </div>
+
+          <!-- 5. Pelayanan Dasar -->
+          <div data-program="pelayanan" class="program-pill flex items-center justify-between cursor-pointer group">
+            <div class="flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-xl bg-teal-100 dark:bg-teal-950/80 text-teal-600 dark:text-teal-400 flex items-center justify-center text-sm group-hover:scale-110 transition-transform">
+                <i class="fas fa-hand-holding-heart"></i>
+              </div>
+              <span class="text-xs font-bold text-slate-800 dark:text-slate-200">Pelayanan Dasar</span>
+            </div>
+            <i class="fas fa-chevron-right text-[10px] text-slate-300 group-hover:text-teal-600 group-hover:translate-x-0.5 transition-all"></i>
+          </div>
+
+          <!-- 6. Lingkungan Hidup -->
+          <div data-program="lingkungan" class="program-pill flex items-center justify-between cursor-pointer group">
+            <div class="flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-sm group-hover:scale-110 transition-transform">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <span class="text-xs font-bold text-slate-800 dark:text-slate-200">Lingkungan Hidup</span>
+            </div>
+            <i class="fas fa-chevron-right text-[10px] text-slate-300 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: AGENDA KOTA PALU (Approx 35-40% width = 5/12 cols) -->
+      <div id="agenda-section" class="lg:col-span-5 glass-card p-6">
+        <!-- Section Header -->
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center text-sm shadow-sm">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div>
+              <h2 class="text-base font-bold text-slate-900 dark:text-white">Agenda Kota Palu</h2>
+              <p class="text-[11px] text-slate-500 dark:text-slate-400">Kegiatan penting yang akan datang.</p>
+            </div>
+          </div>
+          <button onclick="document.getElementById('agenda-item-1').click();" class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline">
+            Lihat Semua Agenda →
+          </button>
+        </div>
+
+        <!-- Agenda List (Matches reference image) -->
+        <div class="space-y-3 mt-3">
+          <!-- Agenda Item 1 -->
+          <div id="agenda-item-1" class="agenda-item p-3 rounded-2xl bg-white/70 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-between hover:bg-white dark:hover:bg-slate-800 hover:border-blue-400 transition-all group cursor-pointer"
+               data-title="Rapat Koordinasi Pembangunan Daerah (Rakorda Bappeda)"
+               data-date="06 Oktober 2026 • 09.00 WITA"
+               data-location="Aula Kantor Wali Kota Palu, Mantikulore"
+               data-desc="Rapat koordinasi pimpinan perangkat daerah se-Kota Palu bersama Wali Kota dan Wakil Wali Kota guna evaluasi capaian target RPJMD 2021-2026 dan akselerasi penyelesaian program prioritas pembangunan.">
+            <div class="flex items-center gap-3">
+              <!-- Date Badge -->
+              <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-center flex flex-col justify-center">
+                <span class="text-xs font-black text-blue-600 dark:text-blue-400 leading-none">06</span>
+                <span class="text-[9px] font-bold uppercase text-slate-400">Okt</span>
+              </div>
+              <div>
+                <h3 class="text-xs font-bold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 transition-colors line-clamp-1">Rapat Koordinasi Pembangunan Daerah</h3>
+                <span class="text-[11px] text-slate-400 flex items-center gap-1 mt-0.5">
+                  <i class="fas fa-map-marker-alt text-red-500 text-[10px]"></i> Aula Kantor Wali Kota Palu
+                </span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-right text-xs text-slate-300 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all"></i>
+          </div>
+
+          <!-- Agenda Item 2 -->
+          <div class="agenda-item p-3 rounded-2xl bg-white/70 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700/80 flex items-center justify-between hover:bg-white dark:hover:bg-slate-800 hover:border-blue-400 transition-all group cursor-pointer"
+               data-title="Festival Teluk Palu 2026"
+               data-date="13 Oktober 2026 • 15.30 WITA"
+               data-location="Pantai Talise & Anjungan Palu"
+               data-desc="Pesta rakyat tahunan menyambut HUT Kota Palu menampilkan parade perahu tradisional katinting, festival kuliner khas Palu (Kaledo & Uta Kelo), pertunjukan musik etnik Kaili, dan pameran ekonomi kreatif UMKM.">
+            <div class="flex items-center gap-3">
+              <!-- Date Badge -->
+              <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-center flex flex-col justify-center">
+                <span class="text-xs font-black text-blue-600 dark:text-blue-400 leading-none">13</span>
+                <span class="text-[9px] font-bold uppercase text-slate-400">Okt</span>
+              </div>
+              <div>
+                <h3 class="text-xs font-bold text-slate-800 dark:text-slate-100 group-hover:text-blue-600 transition-colors line-clamp-1">Festival Teluk Palu 2026</h3>
+                <span class="text-[11px] text-slate-400 flex items-center gap-1 mt-0.5">
+                  <i class="fas fa-map-marker-alt text-red-500 text-[10px]"></i> Pantai Talise & Anjungan
+                </span>
+              </div>
+            </div>
+            <i class="fas fa-chevron-right text-xs text-slate-300 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- COMPREHENSIVE EXTENSION SECTIONS (Everything from official portal) -->
+
+    <!-- SECTION: BERITA & INFORMASI TERKINI KOTA PALU -->
+    <section id="berita" class="pt-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300 mb-2">
+            Kabar Terkini
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">Berita Kota Palu</h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Publikasi resmi kegiatan kepala daerah, kebijakan pemkot, dan dinamika kota.</p>
+        </div>
+
+        <!-- Filter Tags -->
+        <div class="flex flex-wrap items-center gap-1.5 text-xs font-semibold">
+          <button class="news-filter-btn px-3 py-1.5 rounded-full bg-blue-600 text-white transition-all" data-filter="all">Semua</button>
+          <button class="news-filter-btn px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-all" data-filter="walikota">Wali Kota</button>
+          <button class="news-filter-btn px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-all" data-filter="ekonomi">Ekonomi</button>
+          <button class="news-filter-btn px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-all" data-filter="pembangunan">Pembangunan</button>
+        </div>
+      </div>
+
+      <!-- News Grid (Real articles scraped from live portal) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Article 1: LSDP Sampah -->
+        <article class="news-item-card glass-card overflow-hidden flex flex-col group cursor-pointer" data-category="walikota"
+                 onclick="window.openPaluModal('Wali Kota Palu Terima Bantuan Program LSDP Senilai Rp107 Miliar untuk Pengelolaan Sampah', `
+                  <div class='space-y-4'>
+                    <img src='assets/images/news1.jpg' class='w-full h-64 object-cover rounded-xl' alt='Berita Palu'>
+                    <div class='flex items-center gap-3 text-xs text-slate-400'>
+                      <span><i class='far fa-calendar-alt text-blue-500 mr-1'></i> 06 Oktober 2026</span>
+                      <span><i class='far fa-user text-blue-500 mr-1'></i> Bagian Protokol & Kompim</span>
+                    </div>
+                    <p class='text-sm text-slate-700 dark:text-slate-300 leading-relaxed'>Wali Kota Palu secara resmi menerima bantuan program Local Service Delivery Project (LSDP) senilai Rp107 Miliar dari Bank Dunia yang dialokasikan khusus untuk modernisasi pengelolaan persampahan Kota Palu dari hulu ke hilir.</p>
+                    <p class='text-sm text-slate-700 dark:text-slate-300 leading-relaxed'>Bantuan ini mencakup pengadaan armada pengangkut modern, pembangunan TPS 3R di kelurahan, serta optimalisasi TPA Kawatuna menjadi sistem sanitary landfill ramah lingkungan berstandar internasional.</p>
+                  </div>
+                 `);">
+          <div class="relative overflow-hidden h-48 bg-slate-200 dark:bg-slate-800">
+            <img src="assets/images/news1.jpg" alt="Wali Kota Palu Terima Bantuan LSDP" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-600/90 backdrop-blur-md text-white">Wali Kota</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="text-[11px] text-slate-400 mb-2 flex items-center gap-1.5">
+                <i class="far fa-calendar-alt text-blue-500"></i> 06 Oktober 2026
+              </div>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors line-clamp-2 leading-snug">
+                Wali Kota Palu Terima Bantuan Program LSDP Senilai Rp107 Miliar untuk Pengelolaan Sampah
+              </h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 line-clamp-2">
+                Dukungan percepatan sistem persampahan modern dari Bank Dunia menuju Kota Palu Bebas Sampah dan Peraih Adipura Berkelanjutan.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-blue-600 dark:text-blue-400">
+              <span>Baca Selengkapnya</span>
+              <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 2: Inflasi Rendah -->
+        <article class="news-item-card glass-card overflow-hidden flex flex-col group cursor-pointer" data-category="ekonomi"
+                 onclick="window.openPaluModal('Inflasi Palu Masuk 10 Terendah Nasional, TPID Diminta Jaga Stabilitas Harga', `
+                  <div class='space-y-4'>
+                    <img src='assets/images/news2.jpg' class='w-full h-64 object-cover rounded-xl' alt='Inflasi Palu'>
+                    <div class='flex items-center gap-3 text-xs text-slate-400'>
+                      <span><i class='far fa-calendar-alt text-blue-500 mr-1'></i> 06 Oktober 2026</span>
+                      <span><i class='fas fa-chart-line text-blue-500 mr-1'></i> Perekonomian & SDA</span>
+                    </div>
+                    <p class='text-sm text-slate-700 dark:text-slate-300 leading-relaxed'>Kota Palu mencatatkan prestasi gemilang dengan angka inflasi yang masuk dalam 10 terendah se-Indonesia. Tim Pengendalian Inflasi Daerah (TPID) Kota Palu terus melakukan operasi pasar murah, pemantauan pasokan cabai dan beras, serta subsidi ongkos angkut komoditas bahan pokok.</p>
+                  </div>
+                 `);">
+          <div class="relative overflow-hidden h-48 bg-slate-200 dark:bg-slate-800">
+            <img src="assets/images/news2.jpg" alt="Inflasi Palu Terendah Nasional" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-600/90 backdrop-blur-md text-white">Ekonomi</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="text-[11px] text-slate-400 mb-2 flex items-center gap-1.5">
+                <i class="far fa-calendar-alt text-blue-500"></i> 06 Oktober 2026
+              </div>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors line-clamp-2 leading-snug">
+                Inflasi Palu Masuk 10 Terendah Nasional, TPID Diminta Jaga Stabilitas Harga
+              </h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 line-clamp-2">
+                Pengendalian harga pangan dan operasi pasar murah terpadu berhasil menjaga daya beli masyarakat Palu tetap stabil.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-blue-600 dark:text-blue-400">
+              <span>Baca Selengkapnya</span>
+              <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 3: Panen Tomat Kawatuna -->
+        <article class="news-item-card glass-card overflow-hidden flex flex-col group cursor-pointer" data-category="pembangunan"
+                 onclick="window.openPaluModal('Panen Tomat di Kawatuna Jadi Bukti Palu Mapan atau Palu Menanam Tetap Produktif', `
+                  <div class='space-y-4'>
+                    <img src='assets/images/news3.jpg' class='w-full h-64 object-cover rounded-xl' alt='Panen Tomat Kawatuna'>
+                    <div class='flex items-center gap-3 text-xs text-slate-400'>
+                      <span><i class='far fa-calendar-alt text-blue-500 mr-1'></i> 06 Oktober 2026</span>
+                      <span><i class='fas fa-seedling text-blue-500 mr-1'></i> Dinas Pertanian & Ketahanan Pangan</span>
+                    </div>
+                    <p class='text-sm text-slate-700 dark:text-slate-300 leading-relaxed'>Program 'Palu Mapan' (Palu Menanam) menunjukkan hasil konkret dengan keberhasilan panen raya komoditas tomat dan sayuran segar oleh kelompok tani di Kelurahan Kawatuna, Kecamatan Mantikulore, kendati menghadapi dinamika iklim El Nino.</p>
+                  </div>
+                 `);">
+          <div class="relative overflow-hidden h-48 bg-slate-200 dark:bg-slate-800">
+            <img src="assets/images/news3.jpg" alt="Panen Tomat Kawatuna" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-orange-600/90 backdrop-blur-md text-white">Pertanian</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="text-[11px] text-slate-400 mb-2 flex items-center gap-1.5">
+                <i class="far fa-calendar-alt text-blue-500"></i> 06 Oktober 2026
+              </div>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors line-clamp-2 leading-snug">
+                Panen Tomat di Kawatuna Jadi Bukti Palu Mapan atau Palu Menanam Tetap Produktif
+              </h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 line-clamp-2">
+                Dukungan teknologi irigasi tetes dan pupuk organik Pemkot Palu mengamankan pasokan pangan lokal mandiri.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-blue-600 dark:text-blue-400">
+              <span>Baca Selengkapnya</span>
+              <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SECTION: EKOSISTEM 8 LAYANAN DIGITAL UNGGULAN (Scraped directly from palukota.go.id) -->
+    <section id="semua-layanan" class="pt-6">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300">
+          Digital Government Portal
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-2">Layanan Terpadu Satu Pintu</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Sistem informasi dan layanan digital resmi yang dikelola oleh OPD Pemerintah Kota Palu.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- 1. PPID -->
+        <a href="https://palukota.go.id/layanan-ppid/" target="_blank" class="glass-card p-5 hover:border-blue-500 group transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">PPID Kota Palu</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Pejabat Pengelola Informasi dan Dokumentasi untuk keterbukaan publik.</p>
+          </div>
+          <span class="mt-4 text-xs font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1">Akses PPID <i class="fas fa-external-link-alt text-[10px]"></i></span>
+        </a>
+
+        <!-- 2. Produk Hukum JDIH -->
+        <a href="https://jdih.palukota.go.id" target="_blank" class="glass-card p-5 hover:border-blue-500 group transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fas fa-balance-scale"></i>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">Produk Hukum (JDIH)</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Jaringan Dokumentasi dan Informasi Hukum Perda & Perwali Kota Palu.</p>
+          </div>
+          <span class="mt-4 text-xs font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1">Akses JDIH <i class="fas fa-external-link-alt text-[10px]"></i></span>
+        </a>
+
+        <!-- 3. LPSE -->
+        <a href="https://www.lpsekotapalu.com/" target="_blank" class="glass-card p-5 hover:border-blue-500 group transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fas fa-building"></i>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">LPSE Pengadaan</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Layanan Pengadaan Secara Elektronik dan tender transparan Kota Palu.</p>
+          </div>
+          <span class="mt-4 text-xs font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1">Akses LPSE <i class="fas fa-external-link-alt text-[10px]"></i></span>
+        </a>
+
+        <!-- 4. e-SIGA Perizinan -->
+        <a href="https://esiga.palukota.go.id" target="_blank" class="glass-card p-5 hover:border-blue-500 group transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fas fa-business-time"></i>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">e-SIGA Perizinan</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Sistem Pengendalian dan Pelayanan Perizinan Terpadu DPMPTSP.</p>
+          </div>
+          <span class="mt-4 text-xs font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1">Akses e-SIGA <i class="fas fa-external-link-alt text-[10px]"></i></span>
+        </a>
+
+        <!-- 5. Administrasi Dukcapil ONE -->
+        <a href="https://dukcapil.palukota.go.id/one/" target="_blank" class="glass-card p-5 hover:border-blue-500 group transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="far fa-id-card"></i>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">Dukcapil ONE</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Layanan Administrasi Kependudukan KTP, KK, Akta Lahir Online.</p>
+          </div>
+          <span class="mt-4 text-xs font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1">Akses Dukcapil <i class="fas fa-external-link-alt text-[10px]"></i></span>
+        </a>
+
+        <!-- 6. Lapor Online Walikota -->
+        <a href="http://laporwalikota.palukota.go.id" target="_blank" class="glass-card p-5 hover:border-blue-500 group transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fas fa-file-invoice"></i>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">Lapor Walikota</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Kanal Pengaduan Online langsung kepada Wali Kota Palu.</p>
+          </div>
+          <span class="mt-4 text-xs font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1">Kirim Aduan <i class="fas fa-external-link-alt text-[10px]"></i></span>
+        </a>
+
+        <!-- 7. Halo KB -->
+        <a href="https://halokb.palukota.go.id" target="_blank" class="glass-card p-5 hover:border-blue-500 group transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fas fa-user-friends"></i>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">Halo KB Palu</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Layanan Informasi Program Keluarga Berencana dan Cegah Stunting.</p>
+          </div>
+          <span class="mt-4 text-xs font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1">Akses Halo KB <i class="fas fa-external-link-alt text-[10px]"></i></span>
+        </a>
+
+        <!-- 8. Web OPD -->
+        <a href="https://palukota.go.id/web-opd/" target="_blank" class="glass-card p-5 hover:border-blue-500 group transition-all flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">Portal Web OPD</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Direktori portal resmi seluruh Dinas, Badan, & Kecamatan Kota Palu.</p>
+          </div>
+          <span class="mt-4 text-xs font-bold text-blue-600 dark:text-blue-400 flex items-center gap-1">Lihat OPD <i class="fas fa-external-link-alt text-[10px]"></i></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION: PROFIL PIMPINAN & VISI MISI -->
+    <section id="pimpinan-daerah" class="pt-6">
+      <div class="glass-card p-8 md:p-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <!-- Text Visi Misi -->
+          <div class="lg:col-span-7 space-y-4">
+            <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300">
+              Kepemimpinan Daerah Kota Palu
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+              Visi & Misi Kota Palu 2021 – 2026
+            </h2>
+            <div class="p-4 rounded-2xl bg-blue-50/80 dark:bg-slate-800/80 border-l-4 border-blue-600">
+              <p class="text-sm font-semibold text-slate-800 dark:text-slate-200 italic">
+                "Membangun Kota Palu yang Mandiri, Aman dan Nyaman, Tangguh, serta Profesional dalam Konteks Pembangunan Berkelanjutan Berbasis Kearifan Lokal dan Keagamaan."
+              </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-slate-600 dark:text-slate-300">
+              <div class="flex items-start gap-2">
+                <i class="fas fa-check text-blue-600 mt-1"></i>
+                <span>Membangun perekonomian yang mandiri dan berdaya saing</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fas fa-check text-blue-600 mt-1"></i>
+                <span>Mewujudkan lingkungan kota yang aman, nyaman, dan tangguh bencana</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fas fa-check text-blue-600 mt-1"></i>
+                <span>Menciptakan tata kelola pemerintahan yang profesional & transparan</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="fas fa-check text-blue-600 mt-1"></i>
+                <span>Meningkatkan kualitas hidup manusia berlandaskan kearifan lokal</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cards Pimpinan -->
+          <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+            <!-- Walikota -->
+            <div class="p-4 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-center shadow-sm">
+              <div class="w-20 h-20 mx-auto rounded-full bg-blue-100 dark:bg-slate-700 p-1 mb-3">
+                <img src="assets/images/logo-palu.png" alt="Wali Kota Palu" class="w-full h-full object-contain">
+              </div>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">H. Hadianto Rasyid, S.E.</h3>
+              <p class="text-xs text-blue-600 dark:text-blue-400 font-semibold mt-0.5">Wali Kota Palu</p>
+            </div>
+
+            <!-- Wakil Walikota -->
+            <div class="p-4 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-center shadow-sm">
+              <div class="w-20 h-20 mx-auto rounded-full bg-blue-100 dark:bg-slate-700 p-1 mb-3">
+                <img src="assets/images/logo-palu.png" alt="Wakil Wali Kota Palu" class="w-full h-full object-contain">
+              </div>
+              <h3 class="text-xs font-bold text-slate-900 dark:text-white leading-tight">dr. Reny A. Lamadjido, Sp.PK., M.Kes.</h3>
+              <p class="text-xs text-blue-600 dark:text-blue-400 font-semibold mt-0.5">Wakil Wali Kota Palu</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: PETA & 8 KECAMATAN INTERAKTIF -->
+    <section id="kecamatan-wilayah" class="pt-6">
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300">
+          Wilayah Administratif
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-2">8 Kecamatan Kota Palu</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Pilih kecamatan untuk melihat data populasi, cakupan kelurahan, dan potensi unggulan.</p>
+      </div>
+
+      <!-- Kecamatan Pills -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-6">
+        <button class="kecamatan-btn px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white transition-all shadow-sm" data-kecamatan="mantikulore">Mantikulore</button>
+        <button class="kecamatan-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 transition-all border border-slate-200 dark:border-slate-700" data-kecamatan="palubarat">Palu Barat</button>
+        <button class="kecamatan-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 transition-all border border-slate-200 dark:border-slate-700" data-kecamatan="paluselatan">Palu Selatan</button>
+        <button class="kecamatan-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 transition-all border border-slate-200 dark:border-slate-700" data-kecamatan="palutimur">Palu Timur</button>
+        <button class="kecamatan-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 transition-all border border-slate-200 dark:border-slate-700" data-kecamatan="paluutara">Palu Utara</button>
+        <button class="kecamatan-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 transition-all border border-slate-200 dark:border-slate-700" data-kecamatan="tatanga">Tatanga</button>
+        <button class="kecamatan-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 transition-all border border-slate-200 dark:border-slate-700" data-kecamatan="tawaeli">Tawaeli</button>
+        <button class="kecamatan-btn px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 transition-all border border-slate-200 dark:border-slate-700" data-kecamatan="ulujadi">Ulujadi</button>
+      </div>
+
+      <!-- Dynamic Info Container -->
+      <div id="kecamatan-info-card" class="max-w-4xl mx-auto">
+        <!-- Rendered dynamically by main.js -->
+      </div>
+    </section>
+
+    <!-- SECTION: TRANSPARANSI ANGGARAN & SURVEI KEPUASAN (IKM / SPBE) -->
+    <div id="transparansi" class="grid grid-cols-1 lg:grid-cols-12 gap-6 pt-6">
+
+      <!-- Transparansi Anggaran (7 cols) -->
+      <div class="lg:col-span-7 glass-card p-6">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+              <i class="fas fa-file-invoice-dollar text-lg"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white">Transparansi Anggaran Daerah</h3>
+              <p class="text-xs text-slate-500">APBD & Laporan Keuangan Pemerintah Kota Palu</p>
+            </div>
+          </div>
+          <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300">WTP 10x Berturut</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+          <div class="p-3 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-700 flex items-center justify-between">
+            <div>
+              <h4 class="text-xs font-bold text-slate-800 dark:text-slate-200">APBD Kota Palu TA 2026</h4>
+              <p class="text-[11px] text-slate-500">Ringkasan DPA & Penjabaran</p>
+            </div>
+            <a href="#" onclick="alert('Mengunduh Ringkasan APBD Kota Palu...'); return false;" class="px-2.5 py-1 bg-blue-600 text-white rounded text-xs font-semibold hover:bg-blue-700">
+              <i class="fas fa-download"></i> Unduh
+            </a>
+          </div>
+
+          <div class="p-3 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-700 flex items-center justify-between">
+            <div>
+              <h4 class="text-xs font-bold text-slate-800 dark:text-slate-200">Laporan Akuntabilitas (SAKIP)</h4>
+              <p class="text-[11px] text-slate-500">Predikat Sangat Baik (BB)</p>
+            </div>
+            <a href="#" onclick="alert('Mengunduh LAKIP Kota Palu...'); return false;" class="px-2.5 py-1 bg-blue-600 text-white rounded text-xs font-semibold hover:bg-blue-700">
+              <i class="fas fa-download"></i> Unduh
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Survei Kepuasan (5 cols) -->
+      <div id="survey-widget-container" class="lg:col-span-5 glass-card p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+            <i class="fas fa-star text-lg"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white">Penilaian Portal Resmi</h3>
+            <p class="text-xs text-slate-500">Survei Kepuasan Masyarakat (SPBE)</p>
+          </div>
+        </div>
+        <p class="text-xs text-slate-600 dark:text-slate-300">Bagaimana pengalaman Anda mengakses informasi & layanan di website Kota Palu?</p>
+
+        <!-- Rating Stars -->
+        <div class="flex items-center justify-center gap-2 py-3 text-2xl text-slate-300 cursor-pointer">
+          <i class="fas fa-star survey-star text-amber-400" data-value="1"></i>
+          <i class="fas fa-star survey-star text-amber-400" data-value="2"></i>
+          <i class="fas fa-star survey-star text-amber-400" data-value="3"></i>
+          <i class="fas fa-star survey-star text-amber-400" data-value="4"></i>
+          <i class="fas fa-star survey-star text-amber-400" data-value="5"></i>
+        </div>
+
+        <div class="flex gap-2">
+          <input type="text" id="survey-feedback" placeholder="Tulis masukan saran singkat..." class="w-full text-xs px-3 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-blue-500">
+          <button id="survey-submit-btn" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold whitespace-nowrap">Kirim</button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Col 1: Brand & Contact -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="assets/images/logo-palu.png" alt="Logo Palu" class="h-12 w-auto">
+            <div>
+              <span class="text-xs uppercase font-bold text-slate-400 block tracking-wider">Pemerintah</span>
+              <span class="text-lg font-black text-white block">Kota Palu</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Jl. Balai Kota No. 1, Kelurahan Tanamodindi, Kecamatan Mantikulore, Kota Palu, Sulawesi Tengah 94236
+          </p>
+          <div class="text-xs space-y-1.5 text-slate-400">
+            <p><i class="fas fa-phone-alt text-blue-500 w-4"></i> Call Center: <strong>112</strong> (Bebas Pulsa)</p>
+            <p><i class="fas fa-envelope text-blue-500 w-4"></i> diskominfo@palukota.go.id</p>
+            <p><i class="fas fa-globe text-blue-500 w-4"></i> https://palukota.go.id</p>
+          </div>
+        </div>
+
+        <!-- Col 2: Layanan & Tautan Cepat -->
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">Layanan Digital</h4>
+          <ul class="text-xs space-y-2.5 text-slate-400">
+            <li><a href="https://dukcapil.palukota.go.id/one/" target="_blank" class="hover:text-blue-400 transition-colors">Dukcapil ONE Kependudukan</a></li>
+            <li><a href="https://esiga.palukota.go.id" target="_blank" class="hover:text-blue-400 transition-colors">e-SIGA Pelayanan Perizinan</a></li>
+            <li><a href="http://laporwalikota.palukota.go.id" target="_blank" class="hover:text-blue-400 transition-colors">Lapor Walikota Online</a></li>
+            <li><a href="https://palukota.go.id/layanan-ppid/" target="_blank" class="hover:text-blue-400 transition-colors">PPID Informasi Publik</a></li>
+            <li><a href="https://jdih.palukota.go.id" target="_blank" class="hover:text-blue-400 transition-colors">JDIH Produk Hukum</a></li>
+            <li><a href="https://www.lpsekotapalu.com/" target="_blank" class="hover:text-blue-400 transition-colors">LPSE Pengadaan Barang/Jasa</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Portal Nasional -->
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">Portal Terintegrasi</h4>
+          <ul class="text-xs space-y-2.5 text-slate-400">
+            <li><a href="https://indonesia.go.id" target="_blank" class="hover:text-blue-400 transition-colors">Republik Indonesia (Indonesia.go.id)</a></li>
+            <li><a href="https://sultengprov.go.id" target="_blank" class="hover:text-blue-400 transition-colors">Pemerintah Provinsi Sulawesi Tengah</a></li>
+            <li><a href="https://lapor.go.id" target="_blank" class="hover:text-blue-400 transition-colors">SP4N-LAPOR! Nasional</a></li>
+            <li><a href="https://jdih.setneg.go.id" target="_blank" class="hover:text-blue-400 transition-colors">Sekretariat Negara RI</a></li>
+            <li><a href="https://surveidigital.spbe.go.id" target="_blank" class="hover:text-blue-400 transition-colors">Survei Digital SPBE MenPANRB</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Statistik Pengunjung & Media Sosial -->
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">Statistik Pengunjung</h4>
+          <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-xs space-y-2 mb-4">
+            <div class="flex justify-between">
+              <span class="text-slate-400">Pengunjung Hari Ini:</span>
+              <span id="counter-today" class="font-bold text-white">1.482</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400">Bulan Ini:</span>
+              <span class="font-bold text-white">48.910</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-400">Total Pengunjung:</span>
+              <span class="font-bold text-blue-400">1.842.190</span>
+            </div>
+            <div class="flex justify-between pt-1 border-t border-slate-700 text-emerald-400 font-bold">
+              <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Online Sekarang:</span>
+              <span id="counter-online">24</span>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex items-center gap-2">
+            <a href="https://www.instagram.com/palu.kota/" target="_blank" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-pink-600 text-white flex items-center justify-center transition-colors" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/PaluMantap" target="_blank" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-blue-600 text-white flex items-center justify-center transition-colors" title="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.youtube.com/@DISKOMINFOSANTIKKOTAPALU" target="_blank" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-red-600 text-white flex items-center justify-center transition-colors" title="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://twitter.com/pemkotpalu/" target="_blank" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-sky-500 text-white flex items-center justify-center transition-colors" title="X / Twitter">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <p>© 2026 Pemerintah Kota Palu. Dikelola oleh Dinas Komunikasi dan Informatika Santik Kota Palu.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" onclick="alert('Kebijakan Privasi & Perlindungan Data Pribadi Kota Palu'); return false;" class="hover:text-slate-400">Privasi & Perlindungan Data</a>
+          <a href="#" onclick="alert('Syarat & Ketentuan Penggunaan Portal Kota Palu'); return false;" class="hover:text-slate-400">Syarat Ketentuan</a>
+          <a href="#" onclick="alert('Peta Situs Portal Palu'); return false;" class="hover:text-slate-400">Peta Situs</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- UNIVERSAL MODAL -->
+  <div id="universal-modal" class="fixed inset-0 z-50 hidden modal-backdrop items-center justify-center p-4">
+    <div class="modal-content w-full max-w-xl rounded-3xl p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+      <button id="modal-close" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-800 dark:hover:text-white flex items-center justify-center transition-colors">
+        <i class="fas fa-times text-sm"></i>
+      </button>
+      <h3 id="modal-title" class="text-xl font-bold text-slate-900 dark:text-white mb-4 pr-8">Judul Informasi</h3>
+      <div id="modal-body" class="text-sm text-slate-600 dark:text-slate-300">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK SEARCH MODAL (Ctrl+K) -->
+  <div id="search-modal" class="fixed inset-0 z-50 hidden modal-backdrop items-start justify-center pt-20 p-4">
+    <div class="modal-content w-full max-w-2xl rounded-3xl p-5 shadow-2xl relative">
+      <div class="flex items-center gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
+        <i class="fas fa-search text-slate-400 text-lg"></i>
+        <input type="text" id="search-input" placeholder="Cari layanan, pengumuman, berita, atau informasi OPD Kota Palu..." class="w-full bg-transparent text-sm sm:text-base text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none">
+        <button id="search-close" class="text-xs text-slate-400 hover:text-slate-600 dark:hover:text-white px-2 py-1 rounded bg-slate-100 dark:bg-slate-800">ESC</button>
+      </div>
+      <div id="search-results" class="mt-4 max-h-80 overflow-y-auto space-y-1">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
+        <span>Tekan <kbd class="px-1 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border text-slate-600 dark:text-slate-300 font-mono">ESC</kbd> untuk menutup</span>
+        <span>Pencarian Cepat Portal Palu</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING BACK TO TOP BUTTON -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:scale-105 active:scale-95" title="Kembali ke Atas">
+    <i class="fas fa-arrow-up text-sm"></i>
+  </button>
+
+  <!-- Main JavaScript File -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
