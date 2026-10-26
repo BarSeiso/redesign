@@ -5,6 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
+  initNavDropdowns();
   initCounters();
   initModals();
   initSearch();
@@ -160,6 +161,7 @@ function initModals() {
       const date = item.getAttribute('data-date');
       const desc = item.getAttribute('data-desc');
       const file = item.getAttribute('data-file');
+      const pageUrl = item.getAttribute('data-url');
 
       openModal("Detail Pengumuman & Edaran", `
         <div class="space-y-4">
@@ -168,6 +170,7 @@ function initModals() {
           </div>
           <h3 class="text-xl font-bold text-slate-900 dark:text-white">${title}</h3>
           <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm">${desc}</p>
+          ${pageUrl ? `<div class="pb-1"><a href="${pageUrl}" class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline">Buka Halaman Lengkap Pengumuman <i class="fas fa-arrow-right text-[10px]"></i></a></div>` : ''}
           <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 flex items-center justify-between">
             <div class="flex items-center gap-3">
               <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
@@ -176,7 +179,7 @@ function initModals() {
                 <p class="text-xs text-slate-400">PDF Document • Terverifikasi TTE Diskominfo</p>
               </div>
             </div>
-            <a href="#" onclick="alert('Mengunduh salinan resmi dokumen PDF...'); return false;" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg transition-all flex items-center gap-1.5 shadow-sm">
+            <a href="pengumuman.html" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-lg transition-all flex items-center gap-1.5 shadow-sm"><i class="fas fa-file-pdf"></i> Unduh Dokumen Resmi</a>
               <i class="fas fa-download"></i> Unduh PDF
             </a>
           </div>
@@ -212,7 +215,7 @@ function initModals() {
           </div>
           <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">${desc}</p>
           <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex justify-end gap-2">
-            <button onclick="alert('Agenda berhasil disematkan ke Google Calendar!'); closePaluModal();" class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700">
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Agenda+Resmi+Kota+Palu" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 inline-flex items-center gap-1.5"><i class="fab fa-google"></i> Simpan ke Kalender</a>
               <i class="fab fa-google mr-1"></i> Simpan ke Kalender
             </button>
           </div>
@@ -757,7 +760,7 @@ function initSurvey() {
   if (submitBtn) {
     submitBtn.addEventListener('click', () => {
       const feedback = document.getElementById('survey-feedback')?.value || '';
-      alert(`Terima kasih atas partisipasi Anda! Nilai: ${selectedRating} Bintang. Masukan Anda sangat berharga bagi peningkatan Indeks Kepuasan Masyarakat (IKM) & SPBE Kota Palu.`);
+      // Penilaian disimpan dan feedback dikirim tanpa popup blocking
       const container = document.getElementById('survey-widget-container');
       if (container) {
         container.innerHTML = `
@@ -788,3 +791,60 @@ function initVisitorCounter() {
   }, 12000);
 }
 
+
+
+// Dedicated Page Dropdowns & Mobile Overlay Helper
+function initNavDropdowns() {
+  document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+    const btn = dropdown.querySelector('.nav-dropdown-btn');
+    if (!btn) return;
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdown.classList.contains('dropdown-open');
+      document.querySelectorAll('.nav-dropdown').forEach(d => {
+        d.classList.remove('dropdown-open');
+        d.querySelector('.nav-dropdown-btn')?.setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        dropdown.classList.add('dropdown-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.nav-dropdown').forEach(d => {
+      d.classList.remove('dropdown-open');
+      d.querySelector('.nav-dropdown-btn')?.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Mobile nav overlay support
+  const mobileOverlay = document.getElementById('mobile-nav-overlay');
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  const mobileClose = document.getElementById('mobile-nav-close');
+  const mobileBackdrop = document.querySelector('.mobile-nav-backdrop');
+
+  function openMobileNav() {
+    if (mobileOverlay) {
+      mobileOverlay.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+  function closeMobileNav() {
+    if (mobileOverlay) {
+      mobileOverlay.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (mobileBtn && mobileOverlay) {
+    mobileBtn.addEventListener('click', openMobileNav);
+  }
+  if (mobileClose) {
+    mobileClose.addEventListener('click', closeMobileNav);
+  }
+  if (mobileBackdrop) {
+    mobileBackdrop.addEventListener('click', closeMobileNav);
+  }
+}

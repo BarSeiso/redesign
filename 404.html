@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Halaman Tidak Ditemukan | Pemerintah Kota Palu</title>
+  <meta name="description" content="Halaman yang Anda cari tidak ditemukan pada portal resmi Pemerintah Kota Palu.">
+  <link rel="icon" type="image/png" href="assets/images/logo-palu.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            palublue: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#1d70d8',
+              700: '#1756a9',
+              800: '#1e40af',
+              900: '#1e3a8a',
+              950: '#0f2452'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased selection:bg-blue-500 selection:text-white relative">
+
+  <!-- Skip to Content for Accessibility -->
+  <a href="#main-content" class="skip-link">Lewati ke konten utama</a>
+
+  <!-- TOP EMERGENCY NOTIFICATION TICKER -->
+  <div class="bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white text-xs font-semibold py-1.5 px-4 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2 overflow-hidden">
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/20 text-[11px] font-bold tracking-wider uppercase">
+          <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span> Siaga 112
+        </span>
+        <a href="tel:112" class="truncate hover:underline">Layanan Darurat Bebas Pulsa 24 Jam Kota Palu: Hubungi Call Center 112</a>
+      </div>
+      <div class="hidden md:flex items-center gap-4 text-[11px]">
+        <button id="dark-mode-toggle" class="hover:text-amber-200 transition-colors flex items-center gap-1" title="Mode Tampilan" aria-label="Alihkan mode tampilan gelap/terang">
+          <i class="fas fa-moon"></i> <span>Mode Gelap</span>
+        </button>
+        <span class="text-white/40">|</span>
+        <div class="flex items-center gap-1.5" role="group" aria-label="Pengaturan ukuran teks">
+          <span>Aksara:</span>
+          <button id="font-decrease" class="w-4 h-4 rounded bg-white/20 hover:bg-white/30 flex items-center justify-center font-bold text-[10px]" aria-label="Perkecil ukuran font">A-</button>
+          <button id="font-increase" class="w-4 h-4 rounded bg-white/20 hover:bg-white/30 flex items-center justify-center font-bold text-[10px]" aria-label="Perbesar ukuran font">A+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING GLASS NAVBAR CONTAINER -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-2">
+    <nav id="main-nav" class="glass-nav-container py-3 px-4 md:px-6 mb-6 flex items-center justify-between transition-all duration-300">
+      <!-- Logo & City Title -->
+      <a href="index.html" class="flex items-center gap-3 group" aria-label="Kembali ke Beranda Pemerintah Kota Palu">
+        <img src="assets/images/logo-palu.png" alt="Lambang Kota Palu" class="h-10 w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-sm">
+        <div class="leading-tight">
+          <span class="text-[10px] md:text-[11px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 block">Pemerintah</span>
+          <span class="text-sm md:text-base font-extrabold text-blue-900 dark:text-blue-400 block tracking-tight">Kota Palu</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden lg:flex items-center gap-1 text-sm font-semibold text-slate-700 dark:text-slate-200">
+        <a href="index.html" class="px-4 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Beranda</a>
+
+        <!-- Dropdown Profil -->
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+            <span>Profil</span> <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="profil.html#visi-misi" class="nav-dropdown-item" role="menuitem">Visi & Misi</a>
+            <a href="profil.html#pimpinan" class="nav-dropdown-item" role="menuitem">Pimpinan Daerah</a>
+            <a href="profil.html#sejarah" class="nav-dropdown-item" role="menuitem">Sejarah & Lambang</a>
+            <a href="profil.html#geografis" class="nav-dropdown-item" role="menuitem">Letak Geografis</a>
+            <a href="profil.html#program" class="nav-dropdown-item" role="menuitem">Program Unggulan</a>
+          </div>
+        </div>
+
+        <!-- Layanan Link -->
+        <a href="layanan.html" class="px-3.5 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Layanan</a>
+
+        <!-- Dropdown Informasi -->
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+            <span>Informasi</span> <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="berita.html" class="nav-dropdown-item" role="menuitem">Berita Terkini</a>
+            <a href="pengumuman.html" class="nav-dropdown-item" role="menuitem">Pengumuman & Edaran</a>
+            <a href="statistik.html" class="nav-dropdown-item" role="menuitem">Statistik & APBD</a>
+          </div>
+        </div>
+
+        <a href="kontak.html" class="px-3.5 py-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all">Kontak</a>
+      </div>
+
+      <!-- Right Action Button & Search Trigger -->
+      <div class="flex items-center gap-2">
+        <!-- Spotlight Search Trigger -->
+        <button class="search-trigger px-3 py-1.5 rounded-full bg-slate-100/80 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-medium flex items-center gap-2 transition-all" title="Cari Cepat (Ctrl+K)" aria-label="Buka pencarian cepat">
+          <i class="fas fa-search text-slate-400"></i>
+          <span class="hidden sm:inline">Cari...</span>
+          <kbd class="hidden sm:inline-block bg-white dark:bg-slate-900 px-1.5 py-0.5 rounded text-[10px] border border-slate-200 dark:border-slate-700 font-mono text-slate-400">Ctrl+K</kbd>
+        </button>
+
+        <!-- Main CTA Pill Button -->
+        <a href="layanan.html" class="px-4 py-2 rounded-full bg-palublue-600 hover:bg-palublue-700 active:scale-95 text-white text-xs md:text-sm font-bold flex items-center gap-2 shadow-md hover:shadow-palublue-600/30 transition-all">
+          <i class="fas fa-user-circle"></i>
+          <span>Layanan Publik</span>
+        </a>
+
+        <!-- Mobile Hamburger -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-full text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobile-nav-overlay">
+          <i class="fas fa-bars text-lg"></i>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- MOBILE NAVIGATION OVERLAY -->
+  <div id="mobile-nav-overlay" class="mobile-nav-overlay hidden" role="dialog" aria-modal="true" aria-label="Menu Navigasi Mobile">
+    <div class="mobile-nav-backdrop"></div>
+    <div class="mobile-nav-panel p-6">
+      <!-- Header: Brand & Close -->
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-800">
+        <div class="flex items-center gap-3">
+          <img src="assets/images/logo-palu.png" alt="Lambang Kota Palu" class="h-9 w-auto">
+          <div class="leading-tight">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 block">Pemerintah</span>
+            <span class="text-sm font-extrabold text-blue-900 dark:text-blue-400 block">Kota Palu</span>
+          </div>
+        </div>
+        <button id="mobile-nav-close" class="w-11 h-11 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" aria-label="Tutup menu navigasi">
+          <i class="fas fa-times text-base"></i>
+        </button>
+      </div>
+
+      <!-- Navigation Links & Accordions -->
+      <nav class="py-4 space-y-1.5 flex-1" aria-label="Menu Utama Mobile">
+        <a href="index.html" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-xl font-bold text-slate-800 dark:text-slate-100 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600 min-h-[44px]">
+          <span>Beranda</span>
+          <i class="fas fa-chevron-right text-xs text-slate-400"></i>
+        </a>
+
+        <!-- Accordion Profil -->
+        <div class="mobile-accordion">
+          <button class="mobile-accordion-btn w-full flex items-center justify-between px-4 py-3 rounded-xl font-bold text-slate-800 dark:text-slate-100 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600 min-h-[44px] transition-colors" aria-expanded="false">
+            <span>Profil</span>
+            <i class="fas fa-chevron-down text-xs text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="mobile-accordion-content hidden pl-4 pr-2 py-1 space-y-1">
+            <a href="profil.html#visi-misi" class="px-3 py-2.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-blue-600 min-h-[44px] flex items-center">Visi & Misi</a>
+            <a href="profil.html#pimpinan" class="px-3 py-2.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-blue-600 min-h-[44px] flex items-center">Pimpinan Daerah</a>
+            <a href="profil.html#sejarah" class="px-3 py-2.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-blue-600 min-h-[44px] flex items-center">Sejarah & Lambang</a>
+            <a href="profil.html#geografis" class="px-3 py-2.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-blue-600 min-h-[44px] flex items-center">Letak Geografis</a>
+            <a href="profil.html#program" class="px-3 py-2.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-blue-600 min-h-[44px] flex items-center">Program Unggulan</a>
+          </div>
+        </div>
+
+        <a href="layanan.html" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-xl font-bold text-slate-800 dark:text-slate-100 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600 min-h-[44px]">
+          <span>Layanan</span>
+          <i class="fas fa-chevron-right text-xs text-slate-400"></i>
+        </a>
+
+        <!-- Accordion Informasi -->
+        <div class="mobile-accordion">
+          <button class="mobile-accordion-btn w-full flex items-center justify-between px-4 py-3 rounded-xl font-bold text-slate-800 dark:text-slate-100 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600 min-h-[44px] transition-colors" aria-expanded="false">
+            <span>Informasi</span>
+            <i class="fas fa-chevron-down text-xs text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="mobile-accordion-content hidden pl-4 pr-2 py-1 space-y-1">
+            <a href="berita.html" class="px-3 py-2.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-blue-600 min-h-[44px] flex items-center">Berita Terkini</a>
+            <a href="pengumuman.html" class="px-3 py-2.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-blue-600 min-h-[44px] flex items-center">Pengumuman & Edaran</a>
+            <a href="statistik.html" class="px-3 py-2.5 rounded-lg text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-blue-600 min-h-[44px] flex items-center">Statistik & APBD</a>
+          </div>
+        </div>
+
+        <a href="kontak.html" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-xl font-bold text-slate-800 dark:text-slate-100 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600 min-h-[44px]">
+          <span>Kontak</span>
+          <i class="fas fa-chevron-right text-xs text-slate-400"></i>
+        </a>
+      </nav>
+
+      <!-- Mobile Controls: Dark mode & Font scaler -->
+      <div class="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold text-slate-600 dark:text-slate-300">Mode Tampilan</span>
+          <button id="mobile-dark-mode-toggle" class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2 min-h-[44px]" aria-label="Alihkan mode tampilan">
+            <i class="fas fa-moon"></i> <span>Mode Gelap</span>
+          </button>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold text-slate-600 dark:text-slate-300">Ukuran Aksara</span>
+          <div class="flex items-center gap-2">
+            <button id="mobile-font-decrease" class="w-11 h-11 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-bold text-xs flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700" aria-label="Perkecil aksara">A-</button>
+            <button id="mobile-font-increase" class="w-11 h-11 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-bold text-xs flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700" aria-label="Perbesar aksara">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main id="main-content" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- 404 ERROR CARD -->
+    <div class="glass-card p-8 sm:p-14 text-center space-y-6 reveal">
+      
+      <div class="w-24 h-24 mx-auto rounded-3xl bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 flex items-center justify-center text-5xl font-black shadow-inner">
+        <i class="fas fa-compass"></i>
+      </div>
+
+      <div class="space-y-2">
+        <span class="text-sm font-extrabold uppercase tracking-widest text-blue-600 dark:text-blue-400 block">
+          Galat 404 (Not Found)
+        </span>
+        <h1 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
+          Halaman Tidak Ditemukan
+        </h1>
+        <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400 max-w-lg mx-auto mt-2 leading-relaxed">
+          Mohon maaf, halaman atau berkas yang Anda tuju tidak tersedia atau telah dipindahkan ke alamat baru pada pembaruan portal ini.
+        </p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="pt-4 flex flex-wrap items-center justify-center gap-3">
+        <a href="index.html" class="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-bold flex items-center gap-2 shadow-lg shadow-blue-600/30 transition-all">
+          <i class="fas fa-home"></i>
+          <span>Kembali ke Beranda</span>
+        </a>
+        <a href="layanan.html" class="px-6 py-3 rounded-full bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm font-bold flex items-center gap-2 transition-all">
+          <i class="fas fa-th-large"></i>
+          <span>Direktori Layanan</span>
+        </a>
+        <a href="kontak.html" class="px-6 py-3 rounded-full bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm font-bold flex items-center gap-2 transition-all">
+          <i class="fas fa-headset"></i>
+          <span>Pusat Bantuan</span>
+        </a>
+      </div>
+
+      <!-- Quick Search Hint -->
+      <div class="pt-8 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-400">
+        Gunakan tombol <kbd class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border text-slate-600 dark:text-slate-300 font-mono">Ctrl+K</kbd> untuk mencari layanan, pengumuman, atau berita Kota Palu secara instan.
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 pt-16 pb-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Col 1: Brand & Contact -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="assets/images/logo-palu.png" alt="Logo Palu" class="h-12 w-auto">
+            <div>
+              <span class="text-xs uppercase font-bold text-slate-400 block tracking-wider">Pemerintah</span>
+              <span class="text-lg font-black text-white block">Kota Palu</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Jl. Balai Kota No. 1, Kelurahan Tanamodindi, Kecamatan Mantikulore, Kota Palu, Sulawesi Tengah 94236
+          </p>
+          <div class="text-xs space-y-1.5 text-slate-400">
+            <p><i class="fas fa-phone-alt text-blue-500 w-4"></i> Call Center: <strong>112</strong> (Bebas Pulsa)</p>
+            <p><i class="fas fa-envelope text-blue-500 w-4"></i> diskominfo@palukota.go.id</p>
+            <p><i class="fas fa-globe text-blue-500 w-4"></i> https://palukota.go.id</p>
+          </div>
+        </div>
+
+        <!-- Col 2: Layanan & Tautan Cepat -->
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">Layanan Digital</h4>
+          <ul class="text-xs space-y-2.5 text-slate-400">
+            <li><a href="https://dukcapil.palukota.go.id/one/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors">Dukcapil ONE Kependudukan</a></li>
+            <li><a href="https://esiga.palukota.go.id" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors">e-SIGA Pelayanan Perizinan</a></li>
+            <li><a href="http://laporwalikota.palukota.go.id" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors">Lapor Walikota Online</a></li>
+            <li><a href="https://palukota.go.id/layanan-ppid/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors">PPID Informasi Publik</a></li>
+            <li><a href="https://jdih.palukota.go.id" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors">JDIH Produk Hukum</a></li>
+            <li><a href="https://www.lpsekotapalu.com/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors">LPSE Pengadaan Barang/Jasa</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Portal Nasional -->
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">Portal Terintegrasi</h4>
+          <ul class="text-xs space-y-2.5 text-slate-400">
+            <li><a href="https://indonesia.go.id" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors">Republik Indonesia (Indonesia.go.id)</a></li>
+            <li><a href="https://sultengprov.go.id" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors">Pemerintah Provinsi Sulawesi Tengah</a></li>
+            <li><a href="https://lapor.go.id" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors">SP4N-LAPOR! Nasional</a></li>
+            <li><a href="https://jdih.setneg.go.id" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors">Sekretariat Negara RI</a></li>
+            <li><a href="https://surveidigital.spbe.go.id" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors">Survei Digital SPBE MenPANRB</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Jam Layanan & Media Sosial -->
+        <div>
+          <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">Jam Layanan & Kontak</h4>
+          <div class="p-4 rounded-xl bg-slate-800/60 border border-slate-700/60 text-xs space-y-2 mb-4 text-slate-400">
+            <p><strong class="text-slate-200">Senin – Kamis:</strong> 07.30 – 16.00 WITA</p>
+            <p><strong class="text-slate-200">Jumat:</strong> 07.30 – 16.30 WITA</p>
+            <p class="pt-1.5 border-t border-slate-700 text-red-400 font-bold flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> Siaga 112: 24 Jam Nonstop
+            </p>
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex items-center gap-2">
+            <a href="https://www.instagram.com/palu.kota/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-pink-600 text-white flex items-center justify-center transition-colors" title="Instagram" aria-label="Instagram Resmi Kota Palu">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/PaluMantap" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-blue-600 text-white flex items-center justify-center transition-colors" title="Facebook" aria-label="Facebook Resmi Kota Palu">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.youtube.com/@DISKOMINFOSANTIKKOTAPALU" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-red-600 text-white flex items-center justify-center transition-colors" title="YouTube" aria-label="YouTube Resmi Kota Palu">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://twitter.com/pemkotpalu/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-sky-500 text-white flex items-center justify-center transition-colors" title="X / Twitter" aria-label="Twitter Resmi Kota Palu">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <p>© 2026 Pemerintah Kota Palu. Dikelola oleh Dinas Komunikasi dan Informatika Santik Kota Palu.</p>
+        <div class="flex items-center gap-6">
+          <a href="kontak.html" class="hover:text-slate-400">Kontak & Bantuan</a>
+          <a href="layanan.html" class="hover:text-slate-400">Direktori Layanan</a>
+          <a href="pengumuman.html" class="hover:text-slate-400">Informasi Publik</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- UNIVERSAL MODAL (FOR SEARCH) -->
+  <div id="universal-modal" class="fixed inset-0 z-50 hidden modal-backdrop items-center justify-center p-4">
+    <div class="modal-content w-full max-w-xl rounded-3xl p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+      <button id="modal-close" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-800 dark:hover:text-white flex items-center justify-center transition-colors" aria-label="Tutup jendela">
+        <i class="fas fa-times text-sm"></i>
+      </button>
+      <h3 id="modal-title" class="text-xl font-bold text-slate-900 dark:text-white mb-4 pr-8">Judul Informasi</h3>
+      <div id="modal-body" class="text-sm text-slate-600 dark:text-slate-300">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK SEARCH MODAL (Ctrl+K) -->
+  <div id="search-modal" class="fixed inset-0 z-50 hidden modal-backdrop items-start justify-center pt-20 p-4">
+    <div class="modal-content w-full max-w-2xl rounded-3xl p-5 shadow-2xl relative">
+      <div class="flex items-center gap-3 border-b border-slate-200 dark:border-slate-800 pb-3">
+        <i class="fas fa-search text-slate-400 text-lg"></i>
+        <input type="text" id="search-input" placeholder="Cari layanan, pengumuman, berita, atau informasi OPD Kota Palu..." class="w-full bg-transparent text-sm sm:text-base text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none" aria-label="Kolom pencarian">
+        <button id="search-close" class="text-xs text-slate-400 hover:text-slate-600 dark:hover:text-white px-2 py-1 rounded bg-slate-100 dark:bg-slate-800" aria-label="Tutup pencarian">ESC</button>
+      </div>
+      <div id="search-results" class="mt-4 max-h-80 overflow-y-auto space-y-1">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
+        <span>Tekan <kbd class="px-1 py-0.5 rounded bg-slate-100 dark:bg-slate-800 border text-slate-600 dark:text-slate-300 font-mono">ESC</kbd> untuk menutup</span>
+        <span>Pencarian Cepat Portal Palu</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING BACK TO TOP BUTTON -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 hover:scale-105 active:scale-95" title="Kembali ke Atas" aria-label="Kembali ke bagian atas halaman">
+    <i class="fas fa-arrow-up text-sm"></i>
+  </button>
+
+  <!-- Main JavaScript File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
